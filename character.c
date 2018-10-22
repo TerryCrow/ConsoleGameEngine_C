@@ -1,9 +1,9 @@
 #include <string.h>
 
-struct Player
+struct Plane
 {
 	int health;
 	int speed;
 	int posX, posY;
 	char *sprite;
-} Player;
+} Plane;
