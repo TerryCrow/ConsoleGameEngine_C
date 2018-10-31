@@ -16,23 +16,14 @@ void hideCursor()
 	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
 }
 
-void animation(int x, int y, char *screen, char *sprite, int r, int c)
+void animation(int posX, int posY, char *screen, char *sprite, int height, int width)
 {
-	for (int i = 0; i < r; i++)
+	for (int i = 0; i < height; i++)
 	{
-		for (int j = 0; j < c; j++)
+		for (int j = 0; j < width; j++)
 		{
-			if (*((char *)sprite + c * i + j) != ' ')
-				*((char *)screen + c * i + j) = *((char *)sprite + c * i + j);
+			if (!((char *)sprite + width * i + j) == ' ')
+				*((char *)screen + width * i + j) = *((char *)sprite + width * i + j);
 		}
 	}
 }
-
-// void drawStr(int x, int y, char *string ,int index)
-// {
-// 	for (int i = 0; i < index; i++)
-// 	{
-// 		pos(x, y + i);
-// 		printf(string[i]);
-// 	}
-// }

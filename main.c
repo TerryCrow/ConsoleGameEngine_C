@@ -23,8 +23,7 @@ void gameLoop()
 
 int main()
 {
-	initOnWindows();
-	// initOnLinux();
+	init();
 	gameLoop();
 	return 0;
 }
