@@ -1,13 +1,11 @@
 #include <conio.h>
+#include <winuser.h>
 
-char getKeys()
+char getKeyDown(char c)
 {
-	while(1){
-		int ch;
-		if (_kbhit())
-		{
-			ch = _getch();
-			return ch;
-		}
+	if (GetAsyncKeyState(c) & 0x8000)
+	{
+		return 1;
 	}
+	return 0;
 }
