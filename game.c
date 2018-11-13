@@ -1,74 +1,66 @@
 #include "input.c"
 // #include "character.c"
-
 #define SCREEN_X 80
 #define SCREEN_Y 30
 
-char screen[] = "";
+// char screen[(SCREEN_X + 1) * SCREEN_Y];
+char screen[SCREEN_Y][SCREEN_X];
 char clear[] = "";
 char test[] = "test";
 
+int i, j;
+
 void init()
 {
-	// char s_x[] = "";
-	// char s_y[] = "";
+	// char *s_x = "";
+	// char *s_y = "";
 	// sprintf(s_x, "%d", SCREEN_X + 1);
 	// sprintf(s_y, "%d", SCREEN_Y + 1);
-	// system(strcat(strcat("mode con cols=", s_x), strcat(" lines=", s_y)));
-	system("mode con cols=81 lines=31");
-	for (int i = 0; i < SCREEN_Y; i++)
+	// system(strcat(strcat("mode con cols=", 81), strcat(" lines=", 31)));
+	for (i = 0; i < SCREEN_Y; i++)
 	{
-		for (int j = 0; j < SCREEN_X; j++)
+		for (j = 0; j < SCREEN_X; j++)
 		{
-			strcat(screen, " ");
+			screen[i][j] = ' ';
 		}
-		strcat(screen, "\n");
+		// screen[i][j + 1] = '\n';
+		// strcat(screen, "\n");
 	}
-	// *clear = *screen;
 }
 
 void update()
 {
-	// animation(1, 1, 1, screen, SCREEN_X, SCREEN_Y, test, 1, 4);
-
 	if (getKeyDown('W'))
 	{
-		pos(1, 0);
-		printf("W");
+		screen[0][1] = 'W';
 	}
 	if (getKeyDown('A'))
 	{
-		pos(0, 1);
-		printf("A");
+		screen[1][0] = 'A';
 	}
 	if (getKeyDown('S'))
 	{
-		pos(1, 1);
-		printf("S");
+		screen[1][1] = 'S';
 	}
 	if (getKeyDown('D'))
 	{
-		pos(2, 1);
-		printf("D");
+		screen[1][2] = 'D';
 	}
 	if (getKeyDown('J'))
 	{
-		pos(4, 1);
-		printf("J");
+		screen[1][4] = 'J';
 	}
 	if (getKeyDown('K'))
 	{
-		pos(5, 1);
-		printf("K");
+		screen[1][5] = 'K';
 	}
 	if (getKeyDown(27))
 	{
-		pos(7, 1);
-		printf("Q");
+		screen[1][7] = 'Q';
 	}
 }
 
 void updateAnim()
 {
-	animation(1, 1, 1, screen, SCREEN_X, SCREEN_Y, test, 1, 4);
+	// animation(1, 1, 1, *screen, SCREEN_X, SCREEN_Y, test, 1, 4);
 }

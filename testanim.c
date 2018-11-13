@@ -67,6 +67,7 @@ void update()
 		pos(0, 0);
 		anim(5, 5, 2, 4);
 		printf("%s", screen); //output screen
+		printf(screen[0]);
 		Sleep(1000 / FPS);
 	}
 }

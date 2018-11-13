@@ -14,12 +14,12 @@ void gameLoop()
 {
 	while (1)
 	{
-		// system("mode con cols=81 lines=31");
 		hideCursor();
 		pos(0, 0);
-		printf("%s", screen); //output screen
+		init();
 		update(); //gameupdate
 		updateAnim();
+		printf("%s", screen); //output screen
 		// *screen = *clear;	 //clear screen
 		Sleep(1000 / FPS);
 	}
@@ -27,6 +27,7 @@ void gameLoop()
 
 int main()
 {
+	system("mode con cols=80 lines=30");
 	init();
 	gameLoop();
 	return 0;

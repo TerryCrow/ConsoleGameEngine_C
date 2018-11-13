@@ -52,10 +52,9 @@ void animation(int animSpeed, int posX, int posY, char *screen, int SCREEN_X, in
 	{
 		for (int j = posX; j < width; j++)
 		{
-			//if (!((char *)sprite + width * i + j) == ' ' && posX <= SCREEN_X && posX >= 0 && posY <= SCREEN_Y && posY >= 0)
-			// *((char *)screen + width * i + j) = *((char *)sprite + width * i + j);
-			*((char *)screen + width * i + j) = 't';
-			printf("bingo");
+			// screen[i][j] = sprite[i][j];
+			// *((char *)screen + width * i + j) = 't';
+			// printf("bingo");
 		}
 	}
 	// }
