@@ -20,14 +20,15 @@ void gameLoop()
 		update(); //gameupdate
 		updateAnim();
 		printf("%s", screen); //output screen
-		// *screen = *clear;	 //clear screen
 		Sleep(1000 / FPS);
 	}
 }
 
 int main()
 {
-	system("mode con cols=80 lines=30");
+	char sys_code[100];
+	sprintf(sys_code, "mode con cols=%d lines=%d", SCREEN_W + 1, SCREEN_H + 1);
+	system(sys_code);
 	init();
 	gameLoop();
 	return 0;

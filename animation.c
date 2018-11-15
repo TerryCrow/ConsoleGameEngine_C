@@ -36,26 +36,24 @@ void animations(int posX, int posY, char *screen, char *sprite, int height, int 
  * Paramaters :
  * int animSpeed : current sprite draw frames
  * int posX : current sprite draw witch position X
- * int posY : current sprite draw witch position X
+ * int posY : current sprite draw witch position Y
  * char *screen : put sprite into screen buffer
- * int SCREEN_X : screen's width
- * int SCREEN_Y : screen's height
+ * int SCREEN_W : screen's width
+ * int SCREEN_H : screen's height
  * char *sprite : gameobject's sprite
  * int height : current sprite's height
  * int width : current sprite's width
  */
-void animation(int animSpeed, int posX, int posY, char *screen, int SCREEN_X, int SCREEN_Y, char *sprite, int height, int width)
+void animation(int animSpeed, int posX, int posY, char *screen, int SCREEN_W, int SCREEN_H, char *sprite, int height, int width)
 {
 	// for (int h = 0; h < animSpeed; h++)
 	// {
-	for (int i = posY; i < height; i++)
-	{
-		for (int j = posX; j < width; j++)
+		for (int i = posY; i < height; i++)
 		{
-			// screen[i][j] = sprite[i][j];
-			// *((char *)screen + width * i + j) = 't';
-			// printf("bingo");
+			for (int j = posX; j < width; j++)
+			{
+				// screen[i][j] = sprite[i - posY][j - posX];
+			}
 		}
-	}
 	// }
 }
